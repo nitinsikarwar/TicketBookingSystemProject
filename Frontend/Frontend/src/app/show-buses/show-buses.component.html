@@ -1,0 +1,20 @@
+<app-user-header></app-user-header>
+<br><br><br>
+<h1 style="color:#c2185b ; margin-left: 45%;">Available Buses!!</h1><br>
+<div class="container" style="background-image:url('/assets/bg4.jpg');background-size: contain;
+background-position: center;
+padding: 20px;
+border: 1px solid black;
+ ">
+    
+    <div  style="border-color:  black">
+    <table class="table table-hover" border="1" style="background-color:white;margin: 30px 0 30px 0" *ngFor="let b of buslist"  >
+        
+    <thead><th>Bus ID</th><th>Bus Type</th><th>Description</th><th>Boarding point</th><th>Dropping point</th><th>Fair Price</th></thead>
+    <tr><td>{{b.busId}}</td><td>{{b.busType}}</td><td>{{b.description}}</td><td>{{b.route.from}}</td><td>{{b.route.to}}</td><td>{{b.price | currency:"INR"}}</td></tr>
+    <tr><td><i title="Water Ameneties" class="bi bi-droplet"></i>&nbsp;<i title="Mobile charging" class="bi bi-battery"></i>&nbsp;<i title="CCTV" class="bi bi-camera-video"></i>&nbsp;<i title="USB Cable" class="bi bi-usb-symbol"></i></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td> <td> </td><td> </td><td> </td><td><button class="btn btn-outline-danger" (click)="insertTicket(b.busId)" >Book Now</button>&nbsp;</td></tr>
+    
+    <table>
+    <div>
+  

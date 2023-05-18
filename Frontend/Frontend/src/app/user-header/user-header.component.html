@@ -1,0 +1,44 @@
+<style>
+  .navbar {
+    background-image: linear-gradient(135deg, #2a8fb0 10%, #b17951 100%);
+    
+  }
+</style>
+
+
+<nav class="navbar navbar-expand-lg" >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/UserHomepage"><i class="bi bi-bus-front-fill"></i>Oswald Travels</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" >
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/UserRoute">Routes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ShowBuses">Buses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/showTicket">Ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/AboutUs">About Us</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" style="padding: 0 70px 0 0;">
+           <ul class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/UserProfile"><u>My Profile</u></a>
+              <a class="dropdown-item" href="#"><u>Login Out</u></a>
+              
+            </div>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,17 @@
+<app-admin-header></app-admin-header>
+<div class="container">
+    <a class="btn btn-danger" routerLink="BusRegistration">Insert Buses</a><br><br>
+    <div  style="background-image:url('/assets/bg4.jpg');background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border: 1px solid white;
+     ">
+    <table class="table table-hover" border="1" *ngFor="let b of buslist" style="background-color: white;" >
+        
+        <thead><th>Bus ID</th><th>Bus Type</th><th>Description</th><th>Boarding point</th><th>Dropping point</th><th>Fair Price</th></thead>
+        <tr><td>{{b.busId}}</td><td>{{b.busType}}</td><td>{{b.description}}</td><td>{{b.route.from}}</td><td>{{b.route.to}}</td><td>{{b.price | currency:"INR"}}</td></tr>
+        <tr><td><i class="bi bi-droplet"></i>&nbsp;<i class="bi bi-battery"></i>&nbsp;<i class="bi bi-camera-video"></i>&nbsp;<i class="bi bi-usb-symbol"></i></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td><a class="btn btn-outline-danger" (click)="updateBus(b.busId)">Update Bus</a>&nbsp;&nbsp;<a class="btn btn-outline-danger" (click)="deleteBus(b.busId)">Delete Bus</a></td></tr>
+    
+    <table>
+    <div>
+  

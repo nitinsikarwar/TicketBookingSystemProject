@@ -1,0 +1,145 @@
+<style>
+  .Services_mainContainer {
+    text-align: center;
+  }
+
+  .Services_imgBox img {
+    width: 200px;
+  }
+
+  .Services_flexContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .Services_flexItems {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .Services_itemimg img {
+    width: 80px;
+  }
+
+  .Services_desc {
+    color: #777;
+    font-size: 14px;
+  }
+
+  .card {
+    background-image: url('/assets/bus5.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* Increase the width of the card */
+    height: 500px;
+  }
+</style>
+
+
+<app-user-header></app-user-header>
+<div class="container">
+ 
+  <br><br><br>
+  <div class="card">
+      <div class="card-header">
+          
+          <h2>Search Buses</h2>
+          
+
+          <!-- <form #data="ngForm" (ngSubmit)="filterBus(data.value)"> -->
+            
+              <!-- <label for="source">Source:</label>
+              <select #from="ngModel" ngModel name="from">
+                <option value="source" >Source</option>
+                <option *ngFor="let b of buslist" [value]="b.route.from">{{b.route.from}}</option></select>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <label for="destination">Destination:</label>
+              <select #to="ngModel" name="to" ngModel><option *ngFor="let b of buslist" [value]="b.route.to" >{{b.route.to}}</option></select>
+               <a (click) = "filterBus()">asdf</a> -->
+              <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+              <!-- <br>
+              <br> -->
+              <!-- <input type="submit" value="Search" >
+          </form> --> 
+          
+
+          <form #form="ngForm" (submit)="onSubmit()">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <h2><i class="bi bi-geo-alt"></i>Source <i class="bi bi-arrow-right-square"></i><i class="bi bi-arrow-right-square"></i><i class="bi bi-arrow-right-square"></i>&nbsp;&nbsp; <i class="bi bi-geo-alt"></i>Destination</h2>
+            <select [(ngModel)]="selectedOption" name="selectedOption" value="Source" placeholder="Source" >
+              
+              <option *ngFor="let b of buslist" [value]="b.route.from">{{b.route.from}}</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="source">Destination:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <select [(ngModel)]="selectedOption1" name="selectedOption1" value="Destination" style="width:100px">
+              
+              <option *ngFor="let b of buslist" [value]="b.route.to">{{b.route.to}}</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+           <button type="submit" class="btn btn-success">Search Buses</button>
+          </form>  
+
+
+
+      </div>
+  </div>
+</div>
+<br><br><br>
+<div class="container" style="background-image:url('/assets/bg4.jpg');background-size: cover;
+background-position: center;
+padding: 20px;
+border: 1px solid white;
+ ">
+      <table class="table table-hover" border="1" *ngFor="let b of filterlist"  style="background-color: white;">
+      
+          <thead><th>Bus ID</th><th>Bus Type</th><th>Description</th><th>Boarding point</th><th>Dropping point</th><th>Fair Price</th></thead>
+          <tr><td>{{b.busId}}</td><td>{{b.busType}}</td><td>{{b.description}}</td><td>{{b.route.from}}</td><td>{{b.route.to}}</td><td>{{b.price | currency:"INR"}}</td></tr>
+          <tr><td><i title="Water Ameneties" class="bi bi-droplet"></i>&nbsp;<i title="Mobile charging" class="bi bi-battery"></i>&nbsp;<i title="CCTV" class="bi bi-camera-video"></i>&nbsp;<i title="USB Cable" class="bi bi-usb-symbol"></i></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td> <td> </td><td> </td><td> </td><td><button class="btn btn-outline-danger" (click)="insertTicket(b.busId)">Book Now</button></td></tr>
+          
+      </table></div>
+      <br><br><br><br><br>
+     <div>
+        
+        <div class="Services_mainContainer">
+          <div class="Services_imgBox">
+            <img src="/assets/handshake2.png" alt="">
+          </div>
+          <h1>We promise to deliver</h1>
+          <div class="Services_flexContainer">
+            <div class="Services_flexItems">
+              <div class="Services_itemimg">
+                <img src="/assets/safety.jpg" alt="item">
+              </div>
+              <p>SAFETY+</p>
+              <p class="Services_desc">With Safety+ we have brought in a set of measures like Sanitized buses, mandatory masks etc. to ensure you travel safely.</p>
+            </div>
+            <div class="Services_flexItems">
+              <div class="Services_itemimg">
+                <img src="/assets/customer.png" alt="item">
+              </div>
+              <p>SUPERIOR CUSTOMER SERVICE</p>
+              <p class="Services_desc">We put our experience and relationships to good use and are available to solve your travel issues. </p>
+            </div>
+            <div class="Services_flexItems">
+              <div class="Services_itemimg">
+                <img src="/assets/price.jpg" alt="item">
+              </div>
+              <p>LOWEST PRICES</p>
+              <p class="Services_desc">We always give you the lowest price with the best partner offers. And be Pocket friendly for your upcoming trips</p>
+            </div>
+            
+          </div>
+        </div>
+          </div>
+         
+          
+               

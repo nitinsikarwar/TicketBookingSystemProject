@@ -1,0 +1,18 @@
+table{
+    padding: 10px ;
+    border-radius: 5px;
+}
+table:hover{
+    box-shadow: 1px 1px 1px 1px;
+}
+.container{
+    padding-top: 20px;
+}
+th, td {
+    padding: 8px;
+  }
+
+  button{
+    float:right;
+  }
+  

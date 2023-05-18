@@ -1,0 +1,76 @@
+<app-admin-header></app-admin-header>
+<h2 style="text-align: center;">Bus Updation Form</h2>
+<form #regForm="ngForm" (ngSubmit)="BusUpdate(regForm.value)" novalidate>
+  <table>
+    <tr>
+      <td>Bus Type</td>
+      <td><input type="text" #busType="ngModel"name="busType" ngModel required minlength="2"
+        maxlength="20">
+        <div *ngIf="busType.errors?.['required'] && busType.touched " style="color:red ;font-weight: bold;">Please Enter bus type
+        </div>
+        <div *ngIf="busType.errors?.['minlength'] && busType.touched" style="color:red ;font-weight: bold;">Bus type should be
+            atleast 2 characters long
+        </div>
+        <div *ngIf="busType.errors?.['maxlength'] && busType.touched" style="color:red ;font-weight: bold;">Bus type cannot be more
+            than 20 characters
+            long</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Description</td>
+      <td><input type="text" #description="ngModel"name="description" ngModel required minlength="2"
+        maxlength="30">
+        <div *ngIf="description.errors?.['required'] && description.touched " style="color:red ;font-weight: bold;">Please Enter description
+        </div>
+        <div *ngIf="description.errors?.['minlength'] && description.touched" style="color:red ;font-weight: bold;">Description should be
+            atleast 2 characters long
+        </div>
+        <div *ngIf="description.errors?.['maxlength'] && description.touched" style="color:red ;font-weight: bold;">Description cannot be more
+            than 30 characters
+            long</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Email</td>
+      <td><input type="email" #email="ngModel"name="email" ngModel required minlength="2"
+        maxlength="20">
+        <div *ngIf="email.errors?.['required'] && email.touched " style="color:red ;font-weight: bold;">Please Enter email
+        </div>
+        <div *ngIf="email.errors?.['minlength'] && email.touched" style="color:red ;font-weight: bold;">Email should be
+            atleast 2 characters long
+        </div>
+        <div *ngIf="email.errors?.['maxlength'] && email.touched" style="color:red ;font-weight: bold;">Email cannot be more
+            than 20 characters
+            long</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Rating</td>
+      <td><input type="number" #rating="ngModel"name="rating" ngModel required></td>
+    </tr>
+
+    <tr>
+      <td>Price</td>
+      <td><input type="number" #price="ngModel"name="price" ngModel required></td>
+      </tr>
+  
+      <tr>
+        <td>Route ID</td>
+        <td><input type="number" #routeId="ngModel"name="routeId" ngModel required></td>
+      </tr>
+  
+    
+
+      <tr>
+        <td>Bus Timing</td>
+        <td><input type="time" id="time-input" name="time"   step="1" ></td>
+      </tr>
+    <br>
+
+    
+  </table>
+  <input type="submit" value="Update Bus">
+</form>

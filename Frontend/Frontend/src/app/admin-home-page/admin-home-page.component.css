@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.box {
+  width: 300px;
+  height: 150px;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.box i {
+  font-size: 30px;
+}
+
+.carousel {
+  display: block;
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+

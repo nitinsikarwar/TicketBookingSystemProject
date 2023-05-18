@@ -1,0 +1,148 @@
+<app-user-header></app-user-header><div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right">
+ 
+            
+            
+        </div>
+        
+    </div>
+</div>
+
+<header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+            	<h1>User Profile</h1>
+               
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+              
+
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img" src="/assets/profileimg.jpg" alt="student dp">
+            <h3>user.name </h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0"><strong class="pr-1">User ID</strong>uid</p>
+            <p class="mb-0"><strong class="pr-1">Username</strong>Username</p>
+          
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Update General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <form #data="ngForm" (ngSubmit)="updateProfile(data.value)">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Name</th>
+                <td width="2%">:</td>
+                <td><input type="text" #name="ngModel" name="name" ngModel required minlength="2"
+                  maxlength="20">
+                  <div *ngIf="name.errors?.['required'] && name.touched " style="color:red ;font-weight: bold;">Please Enter name
+                  </div>
+                  <div *ngIf="name.errors?.['minlength'] && name.touched" style="color:red ;font-weight: bold;">Name should be
+                      atleast 2 characters long
+                  </div>
+                  <div *ngIf="name.errors?.['maxlength'] && name.touched" style="color:red ;font-weight: bold;">Name cannot be more
+                      than 20 characters
+                      long</div>
+                </td>
+              </tr>
+
+              <tr>
+                <th width="30%">User name</th>
+                <td width="2%">:</td>
+                <td>
+                  <input type="text" placeholder="Enter User name" #username="ngModel" name="username" ngModel required minlength="5"
+                  maxlength="20" />
+                      <div *ngIf="username.errors?.['required'] && username.touched " style="color:red ;font-weight: bold;">Please Enter user name
+                  </div>
+                 <div *ngIf="username.errors?.['minlength'] && username.touched" style="color:red ;font-weight: bold;">User name should be
+                     atleast 5 characters long
+                </div>
+                <div *ngIf="username.errors?.['maxlength'] && username.touched" style="color:red ;font-weight: bold;">User name cannot be more
+                than 20 characters
+                       long</div>
+                </td>
+              </tr>
+                  <tr>
+                <th width="30%">Date Of Birth</th>
+                <td width="2%">:</td>
+                <td><input type="date" #dob="ngModel" name="dob" ngModel></td>
+              </tr><tr>
+                <th width="30%">Password</th>
+                <td width="2%">:</td>
+                
+                  <td><input type="password" #password="ngModel" name="password" ngModel></td></tr>
+                  <div *ngIf="password.errors?.['required'] && password.touched " style="color:red ;font-weight: bold;">Please Enter user name
+                  </div>
+                  <div *ngIf="password.errors?.['minlength'] && password.touched" style="color:red ;font-weight: bold;">User name should be
+                      atleast 8 characters long
+                  </div>
+                  <div *ngIf="password.errors?.['maxlength'] && password.touched" style="color:red ;font-weight: bold;">User name cannot be more
+                      than 20 characters
+                      long</div>
+                  <tr>
+
+                <th width="30%">Email	</th>
+                <td width="2%">:</td>
+                <td>
+                  <input type="email" placeholder="Enter Email" #email="ngModel" name="email" ngModel required minlength="2"
+                  maxlength="20" />
+                </td>
+              </tr>
+              <tr>
+                <th width="30%">Phone No.</th>
+                <td width="2%">:</td>
+                <td>
+                  <input type="number" placeholder="Enter Phone number" #phone="ngModel" name="phone" pattern="[6-9]\d{9}" minlength="10" maxlength="10" ngModel required  />
+                          <small>Valid format: Start with 6, 7, 8, or 9 and must be 10 digits.</small>
+                   <div *ngIf="phone.errors?.['required'] && phone.touched" style="color:red ;font-weight: bold;">Please Enter Phone number</div>
+                </td>
+              </tr>
+              <tr>
+                <th width="30%">Address</th>
+                <td width="2%">:</td>
+                <td>
+                  <input type="text" placeholder="Enter Address" #address="ngModel" name="address" ngModel required  />
+                 <div *ngIf="address.errors?.['required'] && address.touched" style="color:red ;font-weight: bold;">Please Enter Address</div>
+                   </td>
+              </tr>
+              <tr>
+                <th width="30%"></th>
+                <td width="2%">:</td>
+                <td><input type="submit" > </td>
+              </tr>
+              
+            </table>
+        </form>
+          </div>
+        </div>
+          
+  </div>
+</div>
+
+
+           
+    		</div>
+		</div>
+    </div>
+</div></div></section>

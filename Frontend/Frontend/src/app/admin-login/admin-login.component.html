@@ -1,0 +1,78 @@
+
+<body class="img">
+
+
+<nav class="navbar navbar-expand-lg" >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/AdminLogin"><i class="bi bi-bus-front-fill"></i> Oswald Travels</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" >
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/AdminLogin">Routes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/AdminLogin">Buses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Abt">About Us</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" style="padding: 0 70px 0 0;">
+           <ul class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/"><u>Log In</u></a>
+              
+            </div>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div class="container ctn">
+   
+    <div class="user-login">
+        User Login &nbsp;<label class="switch" routerLink="/reg_log">
+            <input type="checkbox" checked> 
+            <span class="slider round"></span>&nbsp;
+          </label>Admin Login<br><br><br>
+        <h2>Admin Login</h2>
+        <form  #data="ngForm" (ngSubmit)="adminLogin(data.value)">
+            <table>
+            <tr><td><label for="username">Username</label></td>
+           <td> <input type="text" id="username" #username = "ngModel" ngModel name="username" required minlength="5"
+            maxlength="20">
+            <div *ngIf="username.errors?.['required'] && username.touched " style="color:red ;font-weight: bold;">Please Enter user name
+            </div>
+            <div *ngIf="username.errors?.['minlength'] && username.touched" style="color:red ;font-weight: bold;">User name should be
+                atleast 5 characters long
+            </div>
+            <div *ngIf="username.errors?.['maxlength'] && username.touched" style="color:red ;font-weight: bold;">User name cannot be more
+                than 20 characters
+                long</div>
+          </td></tr>
+           <tr><td> <label for="password">Password</label></td>
+            <td><input type="password" id="password" #password = "ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" ngModel  name="password" required minlength="8"
+              maxlength="20">
+              <div *ngIf="password.errors?.['required'] && password.touched " style="color:red ;font-weight: bold;">Please Enter user name
+              </div>
+              <div *ngIf="password.errors?.['minlength'] && password.touched" style="color:red ;font-weight: bold;">User name should be
+                  atleast 8 characters long
+              </div>
+              <div *ngIf="password.errors?.['maxlength'] && password.touched" style="color:red ;font-weight: bold;">User name cannot be more
+                  than 20 characters
+                  long</div>
+                  <div *ngIf="password.errors?.['pattern'] && password.touched" style="color:red ;font-weight: bold;">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div>
+            </td></tr>
+            <tr><td colspan="2"><input class="btn btn-primary" [disabled]="!data.valid"type="submit" value="Login"></td></tr>
+        </table></form>
+    
+
+    </div>
+    </div>
+  </body>

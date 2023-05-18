@@ -1,0 +1,16 @@
+<app-admin-header></app-admin-header><div class="container">
+    
+    <div  style="background-image:url('/assets/bg4.jpg');background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border: 1px solid white;
+     ">
+    <table class="table table-hover" border="1" *ngFor="let b of ticketlist" style="background-color: white;" >
+        
+    <thead><th>Bus ID</th><th>ticket_id</th><th>date_of_travel</th><th>dob</th><th>email</th><th>name</th><th>phone</th></thead>
+    <tr><td>{{b.busId}}</td><td>{{b.ticketId}}</td><td>{{b.dateOfTravel}}</td><td>{{b.dob}}</td><td>{{b.email}}</td><td>{{b.name }}</td><td>{{b.phone}}</td></tr>
+    <tr><td><i class="bi bi-droplet"></i>&nbsp;<i class="bi bi-battery"></i>&nbsp;<i class="bi bi-camera-video"></i>&nbsp;<i class="bi bi-usb-symbol"></i></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    
+    <table>
+    <div>
+  

@@ -1,0 +1,37 @@
+<app-admin-header></app-admin-header><h2 style="text-align: center;">Route Registration Form</h2>
+<form #form="ngForm" (ngSubmit)="routeRegister(form.value)" novalidate>
+
+
+
+    <label> Source:</label>
+    <input type="text" placeholder="Enter route Source" #from="ngModel" name="from" ngModel required minlength="2"
+        maxlength="20" />
+    <div *ngIf="from.errors?.['required'] && from.touched " style="color:red ;font-weight: bold;">Please Enter source of route
+    </div>
+    <div *ngIf="from.errors?.['minlength'] && from.touched" style="color:red ;font-weight: bold;">source type should be
+        atleast 2 characters long
+    </div>
+    <div *ngIf="from.errors?.['maxlength'] && from.touched" style="color:red ;font-weight: bold;">source type cannot be more
+        than 20 characters
+        long</div>
+    <br>
+    <label> Destination:</label>
+    <input type="text" placeholder="Enter Route destination" #to="ngModel" name="to" ngModel required minlength="2"
+        maxlength="30" />
+    <div *ngIf="to.errors?.['required'] && to.touched " style="color:red ;font-weight: bold;">Please Enter destination
+    </div>
+    <div *ngIf="to.errors?.['minlength'] && to.touched" style="color:red ;font-weight: bold;">destination  should be
+        atleast 2 characters long
+    </div>
+    <div *ngIf="to.errors?.['maxlength'] && to.touched" style="color:red ;font-weight: bold;">destination cannot be more
+        than 30 characters
+        long</div>
+    
+        
+	<br>
+
+    <input type="submit" value="Route Registration">
+
+
+
+</form>

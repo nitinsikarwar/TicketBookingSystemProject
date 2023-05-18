@@ -1,0 +1,79 @@
+<app-user-header></app-user-header>
+<h2 style="text-align: center;">Ticket Booking Details</h2>
+<form #regForm="ngForm" (ngSubmit)="paynow(regForm.value)" novalidate>
+  <table>
+    <tr>
+      <td>Name Of Passenger</td>
+      <td><input type="text" #name="ngModel"name="name"  ngModel required minlength="2"
+        maxlength="20">
+        <div *ngIf="name.errors?.['required'] && name.touched " style="color:red ;font-weight: bold;">Please Enter name
+        </div>
+        <div *ngIf="name.errors?.['minlength'] && name.touched" style="color:red ;font-weight: bold;">Name should be
+            atleast 2 characters long
+        </div>
+        <div *ngIf="name.errors?.['maxlength'] && name.touched" style="color:red ;font-weight: bold;">Name cannot be more
+            than 20 characters
+            long</div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>Date Of Birth</td>
+      <td><input type="date" #dob="ngModel"name="dob"  ngModel required
+        pattern="\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])" max="2004-12-12">
+        <div *ngIf="dob.errors?.['required'] && dob.touched" style="color:red ;font-weight: bold;">Please Enter DOB</div>
+      <div *ngIf="dob.errors?.['pattern'] && dob.touched" style="color:red ;font-weight: bold;">Please Enter DOB in the
+        format YYYY-MM-DD
+    </div>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>Email</td>
+      <td><input type="email" #email="ngModel"name="email"  ngModel required minlength="2"
+        maxlength="20">
+        <div *ngIf="email.errors?.['required'] && email.touched " style="color:red ;font-weight: bold;">Please Enter email
+        </div>
+        <div *ngIf="email.errors?.['minlength'] && email.touched" style="color:red ;font-weight: bold;">Email should be
+            atleast 2 characters long
+        </div>
+        <div *ngIf="email.errors?.['maxlength'] && email.touched" style="color:red ;font-weight: bold;">Email cannot be more
+            than 20 characters
+            long</div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>Adderss</td>
+      <td><input type="text" #address="ngModel"name="address"  ngModel required minlength="2"
+        maxlength="30">
+        <div *ngIf="address.errors?.['required'] && address.touched " style="color:red ;font-weight: bold;">Please Enter address
+        </div>
+        <div *ngIf="address.errors?.['minlength'] && address.touched" style="color:red ;font-weight: bold;">Address should be
+            atleast 2 characters long
+        </div>
+        <div *ngIf="address.errors?.['maxlength'] && address.touched" style="color:red ;font-weight: bold;">Address cannot be more
+            than 30 characters
+            long</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Date Of Travel</td>
+      <td><input type="date" #date_of_travel="ngModel"name="dateOfTravel" min="2023-05-18" ngModel required></td>
+    </tr>
+
+    <tr>
+      <td>Phone</td>
+      <td><input type="number" #phone="ngModel"name="phone" pattern="[6-9]\d{9}" minlength="10" maxlength="10" ngModel required></td>
+    </tr>
+
+    
+
+    
+
+    
+  </table>
+  <input type="submit" value="Book Ticket">
+</form>

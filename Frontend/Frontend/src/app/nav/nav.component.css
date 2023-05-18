@@ -1,0 +1,118 @@
+.navbar {
+  background-image: linear-gradient(135deg, #2a8fb0 10%, #b17951 100%);
+  
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  .ctn{
+    width:25%;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .user-login {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 50px;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+	margin-right: 50px;
+}
+
+.user-login h2 {
+	margin-top: 0;
+}
+
+.user-login  {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.user-login input[type="text"],
+.user-login input[type="password"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border-color: black;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+
+.user-login input[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.user-login a {
+	display: block;
+	margin-top: 20px;
+	color: #333;
+	font-size: 16px;
+	text-decoration: none;
+}

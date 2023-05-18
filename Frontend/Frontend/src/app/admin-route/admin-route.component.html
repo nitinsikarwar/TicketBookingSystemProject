@@ -1,0 +1,22 @@
+<app-admin-header></app-admin-header><div class="container">
+    <a class="btn btn-danger" routerLink="RouteRegistration">Insert Routes</a><br><br>
+    <div  style="background-image:url('/assets/bg4.jpg');background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border: 1px solid white;
+     ">
+    <table class="table table-hover" border="1" *ngFor="let r of routelist" style="background-color: white;">
+    <thead><th>Route ID</th><th>Source</th><th>Destination</th></thead>
+    <tr><td>{{r.routeId}}</td><td>{{r.from}}</td><td>{{r.to}}</td></tr>
+    <tr><td><i class="bi bi-droplet"></i>&nbsp;<i class="bi bi-battery"></i>&nbsp;<i class="bi bi-camera-video"></i>&nbsp;<i class="bi bi-usb-symbol"></i></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td><a class="btn btn-outline-danger" (click)="updateRoute(r.routeId)">Update</a>&nbsp;<a class="btn btn-outline-danger" (click)="deleteRoute(r.routeId)">Delete</a></td></tr>
+    
+    <table>
+    <div>
+   
+
+
+
+
+
+
